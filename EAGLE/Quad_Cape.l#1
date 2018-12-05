@@ -563,8 +563,6 @@
 <pin name="SDA/SDI" x="-20.32" y="-5.08" length="middle"/>
 <pin name="AUX_CL" x="-20.32" y="5.08" length="middle" direction="in" function="clk"/>
 </symbol>
-<symbol name="TXS0102">
-</symbol>
 </symbols>
 <devicesets>
 <deviceset name="POCKETBEAGLE" prefix="U">
