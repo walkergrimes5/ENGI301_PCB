@@ -6,7 +6,7 @@
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="yes" altdistance="0.01" altunitdist="inch" altunit="inch"/>
+<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
 <layer number="2" name="Route2" color="16" fill="1" visible="no" active="yes"/>
@@ -741,6 +741,11 @@ chip</description>
 <text x="-4.5001" y="10" size="1.016" layer="27" ratio="12">&gt;VALUE</text>
 <text x="-5.08" y="0.635" size="1.016" layer="21" ratio="12">AMP 787616-1</text>
 </package>
+<package name="FIDUCIAL_40MIL">
+<circle x="0" y="0" radius="0.762" width="0.6096" layer="29"/>
+<circle x="0" y="0" radius="1.04726875" width="0.127" layer="41"/>
+<smd name="P$1" x="0" y="0" dx="1.016" dy="1.016" layer="1" roundness="100"/>
+</package>
 </packages>
 <symbols>
 <symbol name="POCKETBEAGLE">
@@ -1082,6 +1087,15 @@ chip</description>
 <circle x="0" y="1.27" radius="1.27" width="0.254" layer="94"/>
 <pin name="VDD_1P8V" x="0" y="-2.54" visible="off" length="short" direction="sup" rot="R90"/>
 <text x="0" y="4.064" size="1.778" layer="96" align="center">&gt;VALUE</text>
+</symbol>
+<symbol name="FIDUCIAL">
+<wire x1="-2.54" y1="-2.54" x2="2.54" y2="2.54" width="0.254" layer="94"/>
+<wire x1="-2.54" y1="2.54" x2="2.54" y2="-2.54" width="0.254" layer="94"/>
+<wire x1="-2.54" y1="2.54" x2="2.54" y2="2.54" width="0.254" layer="94"/>
+<wire x1="2.54" y1="2.54" x2="2.54" y2="-2.54" width="0.254" layer="94"/>
+<wire x1="2.54" y1="-2.54" x2="-2.54" y2="-2.54" width="0.254" layer="94"/>
+<wire x1="-2.54" y1="-2.54" x2="-2.54" y2="2.54" width="0.254" layer="94"/>
+<pin name="P$1" x="0" y="0" visible="off" length="point" direction="nc"/>
 </symbol>
 </symbols>
 <devicesets>
@@ -1542,6 +1556,21 @@ Sizes: 0402, 0603 &amp; 0805</description>
 </gates>
 <devices>
 <device name="">
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="FIDUCIAL" prefix="FUD">
+<gates>
+<gate name="G$1" symbol="FIDUCIAL" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="FIDUCIAL_40MIL">
+<connects>
+<connect gate="G$1" pin="P$1" pad="P$1"/>
+</connects>
 <technologies>
 <technology name=""/>
 </technologies>

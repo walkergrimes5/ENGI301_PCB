@@ -575,7 +575,7 @@ chip</description>
 <wire x1="-4.699" y1="1.016" x2="-4.699" y2="-0.762" width="0.127" layer="21"/>
 <wire x1="4.699" y1="1.016" x2="4.699" y2="-0.762" width="0.127" layer="21"/>
 <text x="-3.429" y="1.397" size="1.27" layer="21">&gt;NAME</text>
-<text x="-3.429" y="-2.413" size="1.27" layer="21">&gt;VALUE</text>
+<text x="-3.429" y="-2.413" size="1.27" layer="27">&gt;VALUE</text>
 </package>
 <package name="10118192-0001LF(MICRO-USB-B-AMPHENOL-FCI)">
 <wire x1="-3.75" y1="-1.45" x2="3.75" y2="-1.45" width="0.127" layer="21"/>

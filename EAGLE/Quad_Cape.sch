@@ -643,6 +643,11 @@ chip</description>
 <text x="-4.5001" y="10" size="1.016" layer="27" ratio="12">&gt;VALUE</text>
 <text x="-5.08" y="0.635" size="1.016" layer="21" ratio="12">AMP 787616-1</text>
 </package>
+<package name="FIDUCIAL_40MIL">
+<circle x="0" y="0" radius="0.762" width="0.6096" layer="29"/>
+<circle x="0" y="0" radius="1.04726875" width="0.127" layer="41"/>
+<smd name="P$1" x="0" y="0" dx="1.016" dy="1.016" layer="1" roundness="100"/>
+</package>
 </packages>
 <symbols>
 <symbol name="ICM-20948">
@@ -892,6 +897,20 @@ chip</description>
 <symbol name="VDD_1P8V">
 <circle x="0" y="1.27" radius="1.27" width="0.254" layer="94"/>
 <pin name="VDD_1P8V" x="0" y="-2.54" visible="off" length="short" direction="sup" rot="R90"/>
+<text x="0" y="4.064" size="1.778" layer="96" align="center">&gt;VALUE</text>
+</symbol>
+<symbol name="FIDUCIAL">
+<wire x1="-2.54" y1="-2.54" x2="2.54" y2="2.54" width="0.254" layer="94"/>
+<wire x1="-2.54" y1="2.54" x2="2.54" y2="-2.54" width="0.254" layer="94"/>
+<wire x1="-2.54" y1="2.54" x2="2.54" y2="2.54" width="0.254" layer="94"/>
+<wire x1="2.54" y1="2.54" x2="2.54" y2="-2.54" width="0.254" layer="94"/>
+<wire x1="2.54" y1="-2.54" x2="-2.54" y2="-2.54" width="0.254" layer="94"/>
+<wire x1="-2.54" y1="-2.54" x2="-2.54" y2="2.54" width="0.254" layer="94"/>
+<pin name="P$1" x="0" y="0" visible="off" length="point" direction="nc"/>
+</symbol>
+<symbol name="USB_DC">
+<circle x="0" y="1.27" radius="1.27" width="0.254" layer="94"/>
+<pin name="USB_DC" x="0" y="-2.54" visible="off" length="short" direction="sup" rot="R90"/>
 <text x="0" y="4.064" size="1.778" layer="96" align="center">&gt;VALUE</text>
 </symbol>
 </symbols>
@@ -1240,6 +1259,33 @@ Sizes: 0402, 0603 &amp; 0805</description>
 </device>
 </devices>
 </deviceset>
+<deviceset name="FIDUCIAL" prefix="FUD">
+<gates>
+<gate name="G$1" symbol="FIDUCIAL" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="FIDUCIAL_40MIL">
+<connects>
+<connect gate="G$1" pin="P$1" pad="P$1"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="USB_DC" prefix="SUPPLY">
+<gates>
+<gate name="G$1" symbol="USB_DC" x="0" y="0"/>
+</gates>
+<devices>
+<device name="">
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
 </devicesets>
 </library>
 <library name="ENGI301">
@@ -1440,31 +1486,6 @@ DIN A3, landscape with location and doc. field</description>
 </deviceset>
 </devicesets>
 </library>
-<library name="GHI-PowerGoundSupply">
-<packages>
-</packages>
-<symbols>
-<symbol name="USB_DC">
-<circle x="0" y="1.27" radius="1.27" width="0.254" layer="94"/>
-<pin name="USB_DC" x="0" y="-2.54" visible="off" length="short" direction="sup" rot="R90"/>
-<text x="0" y="4.064" size="1.778" layer="96" align="center">&gt;VALUE</text>
-</symbol>
-</symbols>
-<devicesets>
-<deviceset name="USB_DC" prefix="SUPPLY">
-<gates>
-<gate name="G$1" symbol="USB_DC" x="0" y="0"/>
-</gates>
-<devices>
-<device name="">
-<technologies>
-<technology name=""/>
-</technologies>
-</device>
-</devices>
-</deviceset>
-</devicesets>
-</library>
 <library name="GHI-IC">
 <packages>
 <package name="SON-6(TI)-DRY">
@@ -1564,12 +1585,10 @@ DIN A3, landscape with location and doc. field</description>
 <part name="GND3" library="Quad_Cape" deviceset="GND" device=""/>
 <part name="SUPPLY7" library="ENGI301" deviceset="VDD_3P3V" device=""/>
 <part name="SUPPLY10" library="ENGI301" deviceset="VDD_3P3V" device=""/>
-<part name="SUPPLY13" library="GHI-PowerGoundSupply" deviceset="USB_DC" device="" value="VIN.USB"/>
 <part name="IC1" library="GHI-IC" deviceset="TPD4S012DRYR" device="" value="TPD4S012DRY"/>
 <part name="GND15" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="C5" library="GHI-BasicComponents" deviceset="CAPACITOR-(INCH)-" device="0402" value=".1uF"/>
-<part name="SUPPLY2" library="GHI-PowerGoundSupply" deviceset="USB_DC" device="" value="VIN.USB"/>
-<part name="X1" library="Quad_Cape" deviceset="GHI2_USB_HOST_W/CHASSIS_GND" device=""/>
+<part name="X1" library="Quad_Cape" deviceset="GHI2_USB_HOST_W/CHASSIS_GND" device="" value="USB"/>
 <part name="GND12" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="SUPPLY3" library="Quad_Cape" deviceset="VDD_1P8V" device=""/>
 <part name="SUPPLY14" library="Quad_Cape" deviceset="VDD_1P8V" device=""/>
@@ -1589,6 +1608,11 @@ DIN A3, landscape with location and doc. field</description>
 <part name="GND10" library="Quad_Cape" deviceset="GND" device=""/>
 <part name="H1" library="Quad_Cape" deviceset="3PIN_100MIL" device=""/>
 <part name="GND4" library="Quad_Cape" deviceset="GND" device=""/>
+<part name="FUD1" library="Quad_Cape" deviceset="FIDUCIAL" device=""/>
+<part name="FUD2" library="Quad_Cape" deviceset="FIDUCIAL" device=""/>
+<part name="FUD3" library="Quad_Cape" deviceset="FIDUCIAL" device=""/>
+<part name="SUPPLY4" library="Quad_Cape" deviceset="USB_DC" device=""/>
+<part name="SUPPLY2" library="Quad_Cape" deviceset="USB_DC" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -1596,7 +1620,8 @@ DIN A3, landscape with location and doc. field</description>
 <text x="711.2" y="325.12" size="2.54" layer="94">Walker Grimes - ENGI 301 Final Project</text>
 <wire x1="530.86" y1="558.8" x2="530.86" y2="490.22" width="0.1524" layer="97"/>
 <wire x1="530.86" y1="490.22" x2="530.86" y2="386.08" width="0.1524" layer="97"/>
-<wire x1="530.86" y1="386.08" x2="530.86" y2="314.96" width="0.1524" layer="97"/>
+<wire x1="530.86" y1="386.08" x2="530.86" y2="342.9" width="0.1524" layer="97"/>
+<wire x1="530.86" y1="342.9" x2="530.86" y2="314.96" width="0.1524" layer="97"/>
 <wire x1="530.86" y1="386.08" x2="581.66" y2="386.08" width="0.1524" layer="97"/>
 <wire x1="581.66" y1="386.08" x2="772.16" y2="386.08" width="0.1524" layer="97"/>
 <wire x1="530.86" y1="490.22" x2="660.4" y2="490.22" width="0.1524" layer="97"/>
@@ -1605,11 +1630,14 @@ DIN A3, landscape with location and doc. field</description>
 <text x="535.94" y="378.46" size="5.08" layer="97">HEADERS (GPSx1, MOTORx4)</text>
 <text x="535.94" y="558.8" size="5.08" layer="97" rot="MR180">BAROMETER/ALTIMETER</text>
 <text x="670.56" y="551.18" size="5.08" layer="97">USB</text>
-<text x="586.74" y="477.52" size="5.08" layer="97">ACCEROMETER/GYROSCOPE (W/ LVL. SHFT. 3.3V to 1.8V)</text>
+<text x="584.2" y="477.52" size="5.08" layer="97">ACCEL/GYRO (W/ LVL. SHFT. 3.3V to 1.8V)</text>
 <text x="436.88" y="533.4" size="5.08" layer="97">POCKET BEAGLE</text>
 <text x="718.82" y="309.88" size="2.1844" layer="94">1 of 1</text>
 <wire x1="581.66" y1="490.22" x2="581.66" y2="386.08" width="0.1524" layer="97"/>
 <text x="541.02" y="477.52" size="5.08" layer="97">POWER IN</text>
+<wire x1="401.32" y1="342.9" x2="530.86" y2="342.9" width="0.1524" layer="97"/>
+<text x="452.12" y="335.28" size="2.54" layer="97">MECHANICAL</text>
+<text x="706.12" y="495.3" size="1.778" layer="97">Note: the +/- pins for the ESD protection are interchangeable</text>
 </plain>
 <instances>
 <instance part="U3" gate="G$1" x="665.48" y="429.26" smashed="yes" rot="MR0">
@@ -1725,9 +1753,6 @@ DIN A3, landscape with location and doc. field</description>
 <instance part="SUPPLY10" gate="G$1" x="612.14" y="546.1" smashed="yes">
 <attribute name="VALUE" x="612.14" y="550.164" size="1.778" layer="96" align="center"/>
 </instance>
-<instance part="SUPPLY13" gate="G$1" x="746.76" y="530.86" smashed="yes">
-<attribute name="VALUE" x="746.76" y="534.924" size="1.778" layer="96" align="center"/>
-</instance>
 <instance part="IC1" gate="G$1" x="731.52" y="508" smashed="yes">
 <attribute name="NAME" x="723.9" y="513.842" size="1.016" layer="95" ratio="12"/>
 <attribute name="VALUE" x="723.9" y="500.888" size="1.016" layer="96" ratio="12"/>
@@ -1738,9 +1763,6 @@ DIN A3, landscape with location and doc. field</description>
 <instance part="C5" gate="G$1" x="746.76" y="508" smashed="yes">
 <attribute name="NAME" x="749.554" y="508.254" size="1.778" layer="95"/>
 <attribute name="VALUE" x="749.554" y="505.968" size="1.778" layer="96"/>
-</instance>
-<instance part="SUPPLY2" gate="G$1" x="424.18" y="416.56" smashed="yes">
-<attribute name="VALUE" x="424.18" y="420.624" size="1.778" layer="96" align="center"/>
 </instance>
 <instance part="X1" gate="G$1" x="690.88" y="520.7" smashed="yes" rot="R270">
 <attribute name="NAME" x="703.58" y="533.4" size="1.27" layer="95" rot="R270"/>
@@ -1806,6 +1828,15 @@ DIN A3, landscape with location and doc. field</description>
 </instance>
 <instance part="GND4" gate="1" x="568.96" y="424.18" smashed="yes">
 <attribute name="VALUE" x="566.42" y="421.64" size="1.778" layer="96"/>
+</instance>
+<instance part="FUD1" gate="G$1" x="454.66" y="325.12" smashed="yes"/>
+<instance part="FUD2" gate="G$1" x="462.28" y="325.12" smashed="yes"/>
+<instance part="FUD3" gate="G$1" x="469.9" y="325.12" smashed="yes"/>
+<instance part="SUPPLY4" gate="G$1" x="746.76" y="530.86" smashed="yes">
+<attribute name="VALUE" x="746.76" y="534.924" size="1.778" layer="96" align="center"/>
+</instance>
+<instance part="SUPPLY2" gate="G$1" x="424.18" y="416.56" smashed="yes">
+<attribute name="VALUE" x="424.18" y="420.624" size="1.778" layer="96" align="center"/>
 </instance>
 </instances>
 <busses>
@@ -2148,20 +2179,6 @@ DIN A3, landscape with location and doc. field</description>
 <junction x="624.84" y="505.46"/>
 </segment>
 </net>
-<net name="VIN.USB" class="0">
-<segment>
-<pinref part="SUPPLY13" gate="G$1" pin="USB_DC"/>
-<pinref part="IC1" gate="G$1" pin="VBUS"/>
-<wire x1="741.68" y1="510.54" x2="746.76" y2="510.54" width="0.1524" layer="91"/>
-<wire x1="746.76" y1="510.54" x2="746.76" y2="525.78" width="0.1524" layer="91"/>
-<wire x1="746.76" y1="525.78" x2="703.58" y2="525.78" width="0.1524" layer="91"/>
-<junction x="746.76" y="510.54"/>
-<wire x1="746.76" y1="528.32" x2="746.76" y2="525.78" width="0.1524" layer="91"/>
-<junction x="746.76" y="525.78"/>
-<pinref part="C5" gate="G$1" pin="1"/>
-<pinref part="X1" gate="G$1" pin="VBUS"/>
-</segment>
-</net>
 <net name="USBC.D-" class="0">
 <segment>
 <pinref part="U1" gate="G$1" pin="USB1.D-"/>
@@ -2169,14 +2186,14 @@ DIN A3, landscape with location and doc. field</description>
 <label x="424.18" y="406.4" size="1.778" layer="95"/>
 </segment>
 <segment>
-<wire x1="726.44" y1="523.24" x2="711.2" y2="523.24" width="0.1524" layer="91"/>
 <label x="716.28" y="523.24" size="1.778" layer="95"/>
-<pinref part="IC1" gate="G$1" pin="D-"/>
-<wire x1="711.2" y1="523.24" x2="703.58" y2="523.24" width="0.1524" layer="91"/>
-<wire x1="721.36" y1="508" x2="711.2" y2="508" width="0.1524" layer="91"/>
-<wire x1="711.2" y1="508" x2="711.2" y2="523.24" width="0.1524" layer="91"/>
-<junction x="711.2" y="523.24"/>
+<pinref part="IC1" gate="G$1" pin="D+"/>
+<wire x1="721.36" y1="510.54" x2="713.74" y2="510.54" width="0.1524" layer="91"/>
+<wire x1="713.74" y1="510.54" x2="713.74" y2="523.24" width="0.1524" layer="91"/>
+<wire x1="713.74" y1="523.24" x2="726.44" y2="523.24" width="0.1524" layer="91"/>
 <pinref part="X1" gate="G$1" pin="D-"/>
+<wire x1="713.74" y1="523.24" x2="703.58" y2="523.24" width="0.1524" layer="91"/>
+<junction x="713.74" y="523.24"/>
 </segment>
 </net>
 <net name="USBC.D+" class="0">
@@ -2186,26 +2203,38 @@ DIN A3, landscape with location and doc. field</description>
 <label x="424.18" y="403.86" size="1.778" layer="95"/>
 </segment>
 <segment>
+<wire x1="726.44" y1="520.7" x2="711.2" y2="520.7" width="0.1524" layer="91"/>
 <label x="716.28" y="520.7" size="1.778" layer="95"/>
-<pinref part="IC1" gate="G$1" pin="D+"/>
-<wire x1="713.74" y1="520.7" x2="703.58" y2="520.7" width="0.1524" layer="91"/>
-<wire x1="721.36" y1="510.54" x2="713.74" y2="510.54" width="0.1524" layer="91"/>
-<wire x1="713.74" y1="510.54" x2="713.74" y2="520.7" width="0.1524" layer="91"/>
+<pinref part="IC1" gate="G$1" pin="D-"/>
+<wire x1="721.36" y1="508" x2="711.2" y2="508" width="0.1524" layer="91"/>
+<wire x1="711.2" y1="508" x2="711.2" y2="520.7" width="0.1524" layer="91"/>
 <pinref part="X1" gate="G$1" pin="D+"/>
-<wire x1="713.74" y1="520.7" x2="726.44" y2="520.7" width="0.1524" layer="91"/>
-<junction x="713.74" y="520.7"/>
+<wire x1="711.2" y1="520.7" x2="703.58" y2="520.7" width="0.1524" layer="91"/>
+<junction x="711.2" y="520.7"/>
 </segment>
 </net>
 <net name="USB_DC" class="0">
 <segment>
+<pinref part="IC1" gate="G$1" pin="VBUS"/>
+<wire x1="741.68" y1="510.54" x2="746.76" y2="510.54" width="0.1524" layer="91"/>
+<wire x1="746.76" y1="510.54" x2="746.76" y2="525.78" width="0.1524" layer="91"/>
+<wire x1="746.76" y1="525.78" x2="703.58" y2="525.78" width="0.1524" layer="91"/>
+<junction x="746.76" y="510.54"/>
+<wire x1="746.76" y1="528.32" x2="746.76" y2="525.78" width="0.1524" layer="91"/>
+<junction x="746.76" y="525.78"/>
+<pinref part="C5" gate="G$1" pin="1"/>
+<pinref part="X1" gate="G$1" pin="VBUS"/>
+<pinref part="SUPPLY4" gate="G$1" pin="USB_DC"/>
+</segment>
+<segment>
 <pinref part="U1" gate="G$1" pin="USB1.VIN"/>
 <wire x1="441.96" y1="408.94" x2="424.18" y2="408.94" width="0.1524" layer="91"/>
 <wire x1="424.18" y1="408.94" x2="424.18" y2="411.48" width="0.1524" layer="91"/>
-<pinref part="SUPPLY2" gate="G$1" pin="USB_DC"/>
 <pinref part="U1" gate="G$1" pin="USB1.VBUS"/>
 <wire x1="424.18" y1="411.48" x2="424.18" y2="414.02" width="0.1524" layer="91"/>
 <wire x1="441.96" y1="411.48" x2="424.18" y2="411.48" width="0.1524" layer="91"/>
 <junction x="424.18" y="411.48"/>
+<pinref part="SUPPLY2" gate="G$1" pin="USB_DC"/>
 </segment>
 </net>
 <net name="USBC.ID1" class="0">
@@ -2339,6 +2368,51 @@ DIN A3, landscape with location and doc. field</description>
 </nets>
 </sheet>
 </sheets>
+<errors>
+<approved hash="104,1,645.16,441.96,U3,VDDIO,VDD_1P8V,,,"/>
+<approved hash="104,1,645.16,444.5,U3,VDD,VDD_1P8V,,,"/>
+<approved hash="202,1,685.8,431.8,U3,AUX_DA,,,,"/>
+<approved hash="202,1,685.8,434.34,U3,AUX_CL,,,,"/>
+<approved hash="104,1,441.96,426.72,U1,VIN,VIN_5V,,,"/>
+<approved hash="202,1,441.96,386.08,U1,AIN.VREF-,,,,"/>
+<approved hash="202,1,441.96,383.54,U1,AIN0(1.8V),,,,"/>
+<approved hash="202,1,441.96,381,U1,AIN1(1.8V),,,,"/>
+<approved hash="202,1,441.96,378.46,U1,AIN2(1.8V),,,,"/>
+<approved hash="202,1,441.96,375.92,U1,AIN3(1.8V),,,,"/>
+<approved hash="202,1,441.96,373.38,U1,AIN4(1.8V),,,,"/>
+<approved hash="104,1,492.76,497.84,U1,3.3V,VDD_3P3V,,,"/>
+<approved hash="204,1,441.96,500.38,U1,VOUT,,,,"/>
+<approved hash="104,1,492.76,500.38,U1,VOUT,VDD_5V,,,"/>
+<approved hash="104,1,441.96,497.84,U1,3.3V,VDD_3P3V,,,"/>
+<approved hash="202,1,441.96,431.8,U1,PWR.BTN,,,,"/>
+<approved hash="204,1,441.96,421.64,U1,BAT.VIN,,,,"/>
+<approved hash="202,1,441.96,419.1,U1,BAT.TEMP,,,,"/>
+<approved hash="202,1,441.96,436.88,U1,RESET#,,,,"/>
+<approved hash="202,1,441.96,370.84,U1,AIN7(1.8V),,,,"/>
+<approved hash="104,1,726.44,441.96,U4,VCCA,VDD_1P8V,,,"/>
+<approved hash="104,1,726.44,439.42,U4,VCCB,VDD_3P3V,,,"/>
+<approved hash="208,1,434.34,358.14,GND,sup,,,,"/>
+<approved hash="208,1,500.38,358.14,GND,sup,,,,"/>
+<approved hash="208,1,640.08,342.9,GND,sup,,,,"/>
+<approved hash="208,1,683.26,342.9,GND,sup,,,,"/>
+<approved hash="208,1,723.9,342.9,GND,sup,,,,"/>
+<approved hash="208,1,759.46,342.9,GND,sup,,,,"/>
+<approved hash="208,1,568.96,342.9,GND,sup,,,,"/>
+<approved hash="208,1,558.8,497.84,GND,sup,,,,"/>
+<approved hash="208,1,746.76,505.46,GND,sup,,,,"/>
+<approved hash="208,1,706.12,510.54,GND,sup,,,,"/>
+<approved hash="208,1,731.52,419.1,GND,sup,,,,"/>
+<approved hash="208,1,640.08,406.4,GND,sup,,,,"/>
+<approved hash="208,1,690.88,439.42,GND,sup,,,,"/>
+<approved hash="208,1,698.5,462.28,GND,sup,,,,"/>
+<approved hash="208,1,749.3,419.1,GND,sup,,,,"/>
+<approved hash="208,1,764.54,419.1,GND,sup,,,,"/>
+<approved hash="208,1,685.8,424.18,GND,out,,,,"/>
+<approved hash="208,1,690.88,401.32,GND,sup,,,,"/>
+<approved hash="208,1,568.96,426.72,GND,sup,,,,"/>
+<approved hash="105,0,?,?,USBC.ID1,,,,,"/>
+<approved hash="113,1,587.271,434.871,FRAME1,,,,,"/>
+</errors>
 </schematic>
 </drawing>
 <compatibility>

@@ -324,7 +324,7 @@
 <pad name="71" x="49.09" y="28.93" drill="0.889" diameter="1.524" shape="octagon"/>
 <pad name="72" x="49.09" y="31.47" drill="0.889" diameter="1.524" shape="octagon"/>
 <text x="3.81" y="30.48" size="1.27" layer="22" ratio="12" rot="R90" align="bottom-center">P2</text>
-<text x="21.59" y="24.765" size="1.27" layer="22">PocektBeagle</text>
+<text x="21.59" y="24.765" size="1.27" layer="22">PocketBeagle</text>
 </package>
 <package name="MS5611-01BA03">
 <smd name="P1" x="-1.05" y="1.875" dx="0.9" dy="0.5" layer="1" rot="R180"/>
