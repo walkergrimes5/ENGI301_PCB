@@ -1195,7 +1195,6 @@ This DRC check is for 4-Layer Standard Capability boards. Use Layer 2 and 15 for
 <contactref element="X1" pad="1"/>
 <contactref element="U1" pad="7"/>
 <contactref element="U1" pad="5"/>
-<wire x1="10.99" y1="3.53" x2="13.53" y2="3.53" width="0.254" layer="1"/>
 <via x="45.085" y="16.002" extent="1-16" drill="0.35"/>
 <wire x1="45.085" y1="16.002" x2="45.972" y2="16.002" width="0.254" layer="1"/>
 <wire x1="45.972" y1="16.002" x2="45.98" y2="16.01" width="0.254" layer="1"/>
