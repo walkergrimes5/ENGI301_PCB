@@ -28,7 +28,7 @@
 <layer number="18" name="Vias" color="2" fill="1" visible="yes" active="yes"/>
 <layer number="19" name="Unrouted" color="6" fill="1" visible="yes" active="yes"/>
 <layer number="20" name="Dimension" color="24" fill="1" visible="yes" active="yes"/>
-<layer number="21" name="tPlace" color="7" fill="1" visible="no" active="yes"/>
+<layer number="21" name="tPlace" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="22" name="bPlace" color="7" fill="1" visible="no" active="yes"/>
 <layer number="23" name="tOrigins" color="15" fill="1" visible="yes" active="yes"/>
 <layer number="24" name="bOrigins" color="15" fill="1" visible="no" active="yes"/>
@@ -913,7 +913,7 @@ This DRC check is for 4-Layer Standard Capability boards. Use Layer 2 and 15 for
 <element name="FUD1" library="Quad_Cape" package="FIDUCIAL_40MIL" value="FIDUCIAL" x="3.429" y="4.572" smashed="yes"/>
 <element name="FUD2" library="Quad_Cape" package="FIDUCIAL_40MIL" value="FIDUCIAL" x="3.556" y="30.48" smashed="yes"/>
 <element name="FUD3" library="Quad_Cape" package="FIDUCIAL_40MIL" value="FIDUCIAL" x="51.308" y="30.48" smashed="yes"/>
-<element name="U$5" library="Strawson_Eagle_Lib" package="XYZ_BIG" value="" x="30.1752" y="15.2146" smashed="yes" rot="R180"/>
+<element name="U$5" library="Strawson_Eagle_Lib" package="XYZ_BIG" value="" x="30.1752" y="14.8336" smashed="yes" rot="R180"/>
 </elements>
 <signals>
 <signal name="GND">
@@ -1320,15 +1320,16 @@ This DRC check is for 4-Layer Standard Capability boards. Use Layer 2 and 15 for
 <signal name="IMU_INT">
 <contactref element="U1" pad="20"/>
 <contactref element="U3" pad="12"/>
-<via x="30.226" y="11.938" extent="1-16" drill="0.35"/>
-<wire x1="30.226" y1="11.938" x2="28.77" y2="10.482" width="0.254" layer="1"/>
-<wire x1="28.77" y1="10.482" x2="28.77" y2="6.07" width="0.254" layer="1"/>
+<via x="31.496" y="15.748" extent="1-16" drill="0.35"/>
+<wire x1="28.77" y1="10.101" x2="28.77" y2="6.07" width="0.254" layer="1"/>
 <via x="30.734" y="18.7706" extent="1-16" drill="0.35"/>
 <wire x1="31.242" y1="18.2626" x2="30.734" y2="18.7706" width="0.254" layer="16"/>
-<wire x1="31.242" y1="18.2626" x2="31.242" y2="12.954" width="0.254" layer="16"/>
-<wire x1="30.226" y1="11.938" x2="31.242" y2="12.954" width="0.254" layer="16"/>
+<wire x1="31.242" y1="18.2626" x2="31.242" y2="16.002" width="0.254" layer="16"/>
+<wire x1="31.496" y1="15.748" x2="31.242" y2="16.002" width="0.254" layer="16"/>
 <wire x1="29.485" y1="18.78" x2="30.7246" y2="18.78" width="0.254" layer="1"/>
 <wire x1="30.7246" y1="18.78" x2="30.734" y2="18.7706" width="0.254" layer="1"/>
+<wire x1="31.496" y1="15.748" x2="31.496" y2="12.827" width="0.254" layer="1"/>
+<wire x1="31.496" y1="12.827" x2="28.77" y2="10.101" width="0.254" layer="1"/>
 </signal>
 <signal name="N$1">
 <contactref element="U3" pad="10"/>

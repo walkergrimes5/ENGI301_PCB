@@ -596,6 +596,25 @@ chip</description>
 </package>
 </packages>
 </library>
+<library name="Strawson_Eagle_Lib">
+<packages>
+<package name="XYZ_BIG">
+<wire x1="0" y1="0" x2="0" y2="4.826" width="0.254" layer="21"/>
+<wire x1="0" y1="4.826" x2="-0.254" y2="3.81" width="0.254" layer="21"/>
+<wire x1="-0.254" y1="3.81" x2="0.254" y2="3.81" width="0.254" layer="21"/>
+<wire x1="0.254" y1="3.81" x2="0" y2="4.826" width="0.254" layer="21"/>
+<wire x1="0" y1="0" x2="4.699" y2="0" width="0.254" layer="21"/>
+<wire x1="4.699" y1="0" x2="3.81" y2="0.254" width="0.254" layer="21"/>
+<wire x1="3.81" y1="0.254" x2="3.81" y2="-0.254" width="0.254" layer="21"/>
+<wire x1="3.81" y1="-0.254" x2="4.699" y2="0" width="0.254" layer="21"/>
+<circle x="0.889" y="0.889" radius="0.381" width="0.127" layer="21"/>
+<circle x="0.889" y="0.889" radius="0.0381" width="0.254" layer="21"/>
+<text x="0.635" y="2.921" size="1.27" layer="21" ratio="12">Y</text>
+<text x="1.524" y="1.397" size="1.27" layer="21" ratio="12">Z</text>
+<text x="3.048" y="0.889" size="1.27" layer="21" ratio="12">X</text>
+</package>
+</packages>
+</library>
 </libraries>
 <attributes>
 </attributes>
@@ -894,6 +913,7 @@ This DRC check is for 4-Layer Standard Capability boards. Use Layer 2 and 15 for
 <element name="FUD1" library="Quad_Cape" package="FIDUCIAL_40MIL" value="FIDUCIAL" x="3.429" y="4.572" smashed="yes"/>
 <element name="FUD2" library="Quad_Cape" package="FIDUCIAL_40MIL" value="FIDUCIAL" x="3.556" y="30.48" smashed="yes"/>
 <element name="FUD3" library="Quad_Cape" package="FIDUCIAL_40MIL" value="FIDUCIAL" x="51.308" y="30.48" smashed="yes"/>
+<element name="U$5" library="Strawson_Eagle_Lib" package="XYZ_BIG" value="" x="30.1752" y="15.2146" smashed="yes" rot="R180"/>
 </elements>
 <signals>
 <signal name="GND">

@@ -1288,13 +1288,14 @@ This DRC check is for 4-Layer Standard Capability boards. Use Layer 2 and 15 for
 <wire x1="20.6629" y1="26.035" x2="18.61" y2="28.0879" width="0.254" layer="1"/>
 <wire x1="18.61" y1="28.0879" x2="18.61" y2="28.93" width="0.254" layer="1"/>
 <via x="19.685" y="26.035" extent="1-16" drill="0.35"/>
-<via x="17.399" y="17.526" extent="1-16" drill="0.35"/>
+<via x="17.399" y="17.653" extent="1-16" drill="0.35"/>
 <wire x1="19.685" y1="23.622" x2="17.399" y2="21.336" width="0.254" layer="16"/>
-<wire x1="17.399" y1="17.526" x2="17.399" y2="21.336" width="0.254" layer="16"/>
+<wire x1="17.399" y1="17.653" x2="17.399" y2="21.336" width="0.254" layer="16"/>
 <wire x1="19.685" y1="26.035" x2="19.685" y2="23.622" width="0.254" layer="16"/>
 <wire x1="20.6629" y1="26.035" x2="19.685" y2="26.035" width="0.254" layer="1"/>
-<wire x1="19.35" y1="17.605" x2="17.478" y2="17.605" width="0.127" layer="1"/>
-<wire x1="17.478" y1="17.605" x2="17.399" y2="17.526" width="0" layer="19" extent="1-1"/>
+<wire x1="17.399" y1="17.653" x2="17.524" y2="17.653" width="0.127" layer="1"/>
+<wire x1="17.572" y1="17.605" x2="19.35" y2="17.605" width="0.127" layer="1"/>
+<wire x1="17.572" y1="17.605" x2="17.524" y2="17.653" width="0.127" layer="1"/>
 </signal>
 <signal name="IMU_INT">
 <contactref element="U1" pad="20"/>
